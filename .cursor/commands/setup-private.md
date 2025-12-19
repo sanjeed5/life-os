@@ -1,7 +1,7 @@
 # Command: /setup-private
 
 ## Objective
-Create a private copy of LifeOS for personal use, with upstream tracking for template updates.
+Create a private copy of LifeOS for personal use—completely separate from the public template.
 
 ## Workflow
 
@@ -12,9 +12,9 @@ Create a private copy of LifeOS for personal use, with upstream tracking for tem
 2. **Get repo name**:
    - Ask user what they want to name their private repo (default: `life-os-private`)
 
-3. **Save current origin as upstream** (for pulling template updates):
+3. **Remove public origin** (your private copy will be completely separate):
    ```bash
-   git remote rename origin upstream
+   git remote remove origin
    ```
 
 4. **Create private repo and set as origin**:
@@ -24,6 +24,6 @@ Create a private copy of LifeOS for personal use, with upstream tracking for tem
 
 5. **Confirm success**:
    - Show the new private repo URL
-   - Confirm remotes: `origin` → their private repo, `upstream` → public template
-   - Explain how to pull future updates: `git fetch upstream && git merge upstream/main`
+   - Explain: "Your private LifeOS is now completely separate from the public template. No risk of accidentally pushing personal content."
+   - Mention: "To get template updates in the future, check the public repo manually and copy over any changes you want."
    - Prompt: "Ready to personalize! Run `/onboard` to set up your profile."
